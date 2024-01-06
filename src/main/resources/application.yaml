@@ -1,8 +1,8 @@
 spring:
-  datasource:
-    url: jdbc:postgresql://localhost:30001/expense-tracker
-    username: core
-    password: core
+#  datasource:
+#    url: jdbc:postgresql://localhost:30001/expense-tracker
+#    username: core
+#    password: core
   flyway:
     enabled: true
 

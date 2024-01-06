@@ -32,8 +32,8 @@ class BasePostgresTest {
         @JvmStatic
         @DynamicPropertySource
         fun initialize(registry: DynamicPropertyRegistry) {
-            registry.add("spring.datasource.url", postgresContainer::getJdbcUrl)
-//            registry.add("multitenancy.master.datasource.url", postgresContainer::getJdbcUrl)
+//            registry.add("spring.datasource.url", postgresContainer::getJdbcUrl)
+            registry.add("multitenancy.admin.datasource.url", postgresContainer::getJdbcUrl)
 //            registry.add("multitenancy.tenant.datasource.url", postgresContainer::getJdbcUrl)
         }
     }
