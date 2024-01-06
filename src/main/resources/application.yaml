@@ -1,1 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:30001/expense-tracker
+    username: core
+    password: core
+  flyway:
+    enabled: true
 
+multitenancy:
+  admin:
+    datasource:
+      url: jdbc:postgresql://localhost:30001/expense-tracker
+      username: core
+      password: core
+  tenant:
+    datasource:
+      url: ${multitenancy.admin.datasource.url}
+      username: app_user
+      password: app_user
+
+logging:
+  level:
+    root: trace
