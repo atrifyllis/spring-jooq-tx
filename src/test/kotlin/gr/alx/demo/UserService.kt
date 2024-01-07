@@ -8,7 +8,7 @@ import java.util.*
 class UserService(
     private val userManagementPort: UserManagementPort,
 ) {
-    @Transactional//(transactionManager = "adminTransactionManager")
+    @Transactional(transactionManager = "adminTransactionManager")
     fun generateUser(command: GenerateUserCommand): User? {
         val newUser = User(UUID.randomUUID(), command.email, command.tenantId)
         return userManagementPort.handlePotentialNewUser(newUser)

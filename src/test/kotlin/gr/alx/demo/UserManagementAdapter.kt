@@ -8,9 +8,9 @@ import org.springframework.transaction.annotation.Transactional
 
 @Service
 class UserManagementAdapter(val dslContext: DSLContext) : UserManagementPort {
-    @Transactional//(transactionManager = "adminTransactionManager")
-    override fun handlePotentialNewUser(user: User): User? {
-        return retrieveUserByEmail(user.email) ?: createUser(user)
+    @Transactional(transactionManager = "adminTransactionManager")
+    override fun handlePotentialNewUser(command: User): User? {
+        return retrieveUserByEmail(command.email) ?: createUser(command)
     }
 
     override fun retrieveUserByEmail(email: String): User? {

@@ -10,7 +10,7 @@ class TenantService(
     private val userService: UserService,
 ) {
 
-    @Transactional//(transactionManager = "adminTransactionManager")
+    @Transactional(transactionManager = "adminTransactionManager")
     fun generateTenant(tokenUserInfo: UserInfo): Tenant? {
 
         val tenant = Tenant(UUID.randomUUID())

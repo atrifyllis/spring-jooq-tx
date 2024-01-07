@@ -10,7 +10,7 @@ import java.time.LocalDateTime
 class TenantManagementAdapter(
     private val dslContext: DSLContext,
 ) : TenantManagementPort {
-    @Transactional//(transactionManager = "adminTransactionManager")
+    @Transactional(transactionManager = "adminTransactionManager")
     override fun createTenant(tenant: Tenant): Tenant? {
 
         val tenantRecord =
